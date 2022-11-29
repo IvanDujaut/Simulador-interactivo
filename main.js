@@ -1,17 +1,3 @@
-/*function verifyAcces(_username, _pass) {
-    let 
-
-}
-
-function login() {
-    let login = prompt("Ya posee una cuenta en SAMPLE?");
-    if (login == 'si') {
-        let username = prompt("Ingrese su nombre de usuario");
-        let pass = prompt("Ingrese su contrase;a");
-        //validar con el objeto de informacion
-    }
-}*/
-
 function mostrarOpciones() {
     console.log(`
     1 - Hacer transaccion
@@ -20,22 +6,23 @@ function mostrarOpciones() {
     `)
 }
 
-function hacerTransaccion(transacciones) {
+function hacerTransaccion(_transacciones) {
     let destino = prompt("Ingrese la direccion de destino: ")
     let monto = prompt("Ingrese el monto a transferir: ")
     let nuevaTransaccion = {
         origen: null, //va a ser la propia
         destino: destino,
-        monto: monto
+        monto: monto,
+        saldo: saldo
     }
-    transacciones.push(nuevaTransaccion)
+    _transacciones.push(nuevaTransaccion)
     return monto
 }
 
-function mostrarTransacciones(transacciones) {
+function mostrarTransacciones(_transacciones) {
     console.log('---------------------------------')
-    for(let i = 0; i < transacciones.length; i++) {
-        console.log(transacciones[i])
+    for(let i = 0; i < _transacciones.length; i++) {
+        console.log(_transacciones[i])
     }
     console.log('---------------------------------')
 }
@@ -46,7 +33,7 @@ function main() {
     let saldo = 1000;
     while(opcion != 3) {
         mostrarOpciones()
-        opcion = prompt("Ingrese un valor: ")
+        opcion = prompt("Ingrese una opcion: ")
         if(opcion == 1) {
             let montoTransferido = hacerTransaccion(transacciones)
             saldo -= montoTransferido
@@ -58,7 +45,3 @@ function main() {
 }
 
 main()
-
-/*let nombre = prompt("Cual es tu nombre?");
-alert(`Bienvenido, ${nombre}`);
-*/
