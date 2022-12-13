@@ -12,8 +12,7 @@ function hacerTransaccion(_transacciones) {
     let nuevaTransaccion = {
         origen: null, //va a ser la propia
         destino: destino,
-        monto: monto,
-        saldo: saldo
+        monto: monto
     }
     _transacciones.push(nuevaTransaccion)
     return monto
